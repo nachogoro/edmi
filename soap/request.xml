@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spy="spyne.examples.helloworld">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spy:say_hello>
+         <spy:name>John</spy:name>
+      </spy:say_hello>
+   </soapenv:Body>
+</soapenv:Envelope>
