@@ -1,0 +1,14 @@
+query {
+  repository(owner: "octocat", name: "Hello-World") {
+    name
+    description
+    issues(first: 5) {
+      edges {
+        node {
+          title
+          state
+        }
+      }
+    }
+  }
+}

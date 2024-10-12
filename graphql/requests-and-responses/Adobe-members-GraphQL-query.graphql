@@ -1,0 +1,11 @@
+query {
+    organization(login: "adobe") {
+        membersWithRole(first: 100) {
+            edges {
+                node {
+                    name
+                }
+            }
+        }
+    }
+}
