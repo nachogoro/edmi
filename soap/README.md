@@ -21,14 +21,14 @@ curl http://127.0.0.1:8000/hello?wsdl
 ## Using the service
 You can use the valid request `request.xml` in this repository:
 ```bash
-curl -i -X POST \
-    -H "Content-Type: text/xml; charset=utf-8" \
+curl -i --request POST \
+    --url http://127.0.0.1:8000/hello \
+    --header "Content-Type: application/xml" \
     --data @./request.xml
-    http://127.0.0.1:8000/hello
 ```
 
 You'll get an output similar to this one (this one has been formatted for readability):
-```
+```xml
 HTTP/1.0 200 OK
 Date: Sun, 06 Oct 2024 12:53:16 GMT
 Server: WSGIServer/0.2 CPython/3.10.1
@@ -45,16 +45,16 @@ Content-Length: 312
 </soap11env:Envelope>
 ```
 
-You can also send a request which is missing the mandatory parameter `name` using `incomplete_request.xml`:
+You can also send a request which is missing the mandatory parameter `name` using `incomplete_request.xml` as your data:
 ```bash
-curl -i -X POST \
-    -H "Content-Type: text/xml; charset=utf-8" \
+curl -i --request POST \
+    --url http://127.0.0.1:8000/hello \
+    --header "Content-Type: application/xml" \
     --data @./incomplete_request.xml
-    http://127.0.0.1:8000/hello
 ```
 
 You'll get something similar to this:
-```bash
+```xml
 HTTP/1.0 500 Internal Server Error
 Date: Sun, 06 Oct 2024 12:55:14 GMT
 Server: WSGIServer/0.2 CPython/3.10.1
